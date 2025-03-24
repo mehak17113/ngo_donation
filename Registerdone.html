@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You for Registering!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="thankyou-container">
+    <h1>Thank you for registering with us!</h1>
+    <p>We will soon update you about your further processes</p>
+    <p id="registrationId">Registration id: </p>
+    <a href="./index.html"> <span class="close">Go to Home --></span></a>
+  </div>
+  <script>
+    // Get the element where the ID will be displayed
+    const registrationIdElement = document.getElementById('registrationId');
+
+    // Function to generate a random ID
+    function generateRegistrationId() {
+      const prefix = 'VOL';
+      const randomPart = Math.floor(Math.random() * 10000).toString().padStart(4, '0'); // Random 4-digit number
+      return `${prefix}${randomPart}`;
+    }
+
+    // Generate a new ID on page load
+    const newRegistrationId = generateRegistrationId();
+    registrationIdElement.textContent += newRegistrationId; // Add the ID to the text content
+  </script>
+</body>
+<style>
+    body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Center content vertically */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Set minimum height for full viewport */
+    background-color: #f5f5f5; /* Light background color */
+  }
+  
+  .thankyou-container {
+    background-color: #fff; /* White background for content */
+    border-radius: 5px; /* Rounded corners */
+    padding: 30px;
+    text-align: center; /* Center text within container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 500px; /* Limit container width */
+  }
+  
+  h1 {
+    font-size: 2em; /* Set heading size */
+    margin-bottom: 15px; /* Add space below heading */
+  }
+  
+  p {
+    font-size: 16px; /* Set paragraph text size */
+    line-height: 1.5; /* Adjust line spacing for readability */
+    margin-bottom: 20px; /* Add space below paragraph */
+  }
+  
+  .close-button {
+    width: 40px; /* Adjust button size */
+    height: 40px; /* Adjust button size */
+    background-color: #ccc; /* Button background color */
+    cursor: pointer; /* Indicate clickable element */
+    position: absolute; /* Position button absolutely */
+    top: 10px; /* Set button position from top */
+    right: 10px; /* Set button position from right */
+  }
+  
+  .close-button:hover { /* Button hover effect */
+    background-color: #ddd; /* Slightly darker on hover */
+  }
+  
+  </style>
+</html>

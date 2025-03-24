@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Presentation Page</title>
+  <meta property="og:title" content="Presentation Page" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <style data-tag="reset-style-sheet">
+    .toggle {
+      display: none;
+    }
+
+    .modal-box {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: scroll;
+      background-color: rgb(255, 255, 255);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 6% auto;
+      padding: 20px;
+      /* border: 1px solid #888; */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      width: 80%;
+      max-width: 1000px;
+      position: relative;
+    }
+
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Styling for the checkbox and label */
+    .toggle+.home-button {
+      cursor: pointer;
+    }
+
+    .toggle:checked~.modal-box {
+      display: block;
+    }
+
+    html {
+      line-height: 1.15;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      border-width: 0;
+      border-style: solid;
+    }
+
+    p,
+    li,
+    ul,
+    pre,
+    div,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    figure,
+    blockquote,
+    figcaption {
+      margin: 0;
+      padding: 0;
+    }
+
+    button {
+      background-color: transparent;
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: inherit;
+      font-size: 100%;
+      line-height: 1.15;
+      margin: 0;
+    }
+
+    button,
+    select {
+      text-transform: none;
+    }
+
+    button,
+    [type="button"],
+    [type="reset"],
+    [type="submit"] {
+      -webkit-appearance: button;
+    }
+
+    button::-moz-focus-inner,
+    [type="button"]::-moz-focus-inner,
+    [type="reset"]::-moz-focus-inner,
+    [type="submit"]::-moz-focus-inner {
+      border-style: none;
+      padding: 0;
+    }
+
+    button:-moz-focus,
+    [type="button"]:-moz-focus,
+    [type="reset"]:-moz-focus,
+    [type="submit"]:-moz-focus {
+      outline: 1px dotted ButtonText;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+
+    input {
+      padding: 2px 4px;
+    }
+
+    img {
+      display: block;
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+  </style>
+  <style data-tag="default-style-sheet">
+    html {
+      font-family: Open Sans;
+      font-size: 18px;
+    }
+
+    body {
+      font-weight: 400;
+      font-style: normal;
+      text-decoration: none;
+      text-transform: none;
+      letter-spacing: normal;
+      line-height: 1.55;
+      color: var(--dl-color-gray-black);
+      background-color: var(--dl-color-gray-white);
+
+    }
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&amp;display=swap"
+    data-tag="font" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
+    data-tag="font" />
+  <link rel="stylesheet" href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body>
+  <link rel="stylesheet" href="./style.css" />
+  <div>
+    <link href="./index.css" rel="stylesheet" />
+    <div class="home-container">
+
+
+      <div data-role="Header" class="home-navbar-container">
+        <div class="home-navbar">
+          <div class="home-logo"><img
+              src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDE5fHxoZWxwJTIwbG9nb3xlbnwwfHx8fDE3MTQ1MDE2NDN8MA&amp;ixlib=rb-4.0.3&amp;w=200"
+              alt="image" class="home-image" /></div>
+          <div class="home-links-container"><a href="./register.html" class="home-link Anchor">Register</a><a
+              href="#services" class="home-link1 Anchor">Events</a><a href="./donate.html"
+              class="home-link2 Anchor">Donate</a><a href="#contact" class="home-link3 Anchor">contact</a></div>
+          <div class="home-cta-container"><a href="home1.html"> <button class="home-cta-btn button">LogIn</button></a>
+            <div data-role="BurgerMenu" class="home-burger-menu"><svg viewBox="0 0 1024 1024" class="home-icon">
+                <path d="M128 256h768v86h-768v-86zM128 554v-84h768v84h-768zM128 768v-86h768v86h-768z"></path>
+              </svg></div>
+          </div>
+          <div data-role="MobileMenu" class="home-mobile-menu">
+            <div class="home-top"><img alt="image" src="public/default-img.svg" class="home-image1" />
+              <div data-role="CloseMobileMenu" class="home-container1"><svg viewBox="0 0 1024 1024" class="home-icon02">
+                  <path
+                    d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z">
+                  </path>
+                </svg></div>
+            </div>
+            <div class="home-mid">
+              <div class="home-links-container1"><a href="#features" class="home-link4 Anchor">features</a><a
+                  href="#services" class="home-link5 Anchor">services</a><a href="#about-us"
+                  class="home-link6 Anchor">About Us</a><a href="#contact" class="home-link7 Anchor">contact</a></div>
+              <button class="home-cta-btn1 Anchor button">sTART BUILDING</button>
+            </div>
+            <div class="home-bot">
+              <div class="home-social-links-container"><svg viewBox="0 0 950.8571428571428 1024" class="home-icon04">
+                  <path
+                    d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z">
+                  </path>
+                </svg><svg viewBox="0 0 877.7142857142857 1024" class="home-icon06">
+                  <path
+                    d="M713.143 73.143c90.857 0 164.571 73.714 164.571 164.571v548.571c0 90.857-73.714 164.571-164.571 164.571h-107.429v-340h113.714l17.143-132.571h-130.857v-84.571c0-38.286 10.286-64 65.714-64l69.714-0.571v-118.286c-12-1.714-53.714-5.143-101.714-5.143-101.143 0-170.857 61.714-170.857 174.857v97.714h-114.286v132.571h114.286v340h-304c-90.857 0-164.571-73.714-164.571-164.571v-548.571c0-90.857 73.714-164.571 164.571-164.571h548.571z">
+                  </path>
+                </svg><svg viewBox="0 0 877.7142857142857 1024" class="home-icon08">
+                  <path
+                    d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z">
+                  </path>
+                </svg></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="home-hero">
+        <div class="home-hero-text-container">
+          <h1 class="home-heading">13Foundation</h1><span class="home-text"><br
+              class="Section-Text" /><span>13Foundation is a non-governmental organization (NGO) dedicated
+              to empowering marginalized communities through education,
+              entrepreneurship, and technology. Founded in [insert year], the
+              foundation operates with a mission to bridge the gap between
+              underserved populations and opportunities for socioeconomic
+              advancement.</span></span><a href="./register.html"><button class="home-cta-btn2 button">VOLUNTEER
+              REGISTERATION</button></a>
+        </div><img alt="image"
+          src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDcxfHxoZWxwfGVufDB8fHx8MTcxNDUwMTQ0M3ww&amp;ixlib=rb-4.0.3&amp;w=1500"
+          class="home-image2" />
+      </div>
+      <div class="home-section-separator"></div>
+      <div id="features" class="home-features">
+        <div class="home-heading-container">
+          <h2 class="home-text03 Section-Heading">Our story</h2>
+        </div><span class="home-text04"><span>Education lies at the core of 13Foundation's initiatives. They
+            believe in the transformative power of education to break the
+            cycle of poverty and empower individuals to build better futures
+            for themselves and their communities. The foundation works to
+            provide access to quality education, often focusing on areas where
+            educational resources are scarce or inaccessible.</span><br class="Section-Text" /><br
+            class="Section-Text" /></span>
+        <div class="home-cards-container">
+          <div class="home-feature-card"><img alt="image"
+              src="https://images.unsplash.com/photo-1615150338956-542fc878f7e4?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDF8fG1hbG51dHJpdGlvbnxlbnwwfHx8fDE3MTQ1MDEzMjF8MA&amp;ixlib=rb-4.0.3&amp;w=800"
+              class="home-image3" /><span class="home-heading1">PM-POSHAN Programme</span></div>
+          <div class="home-feature-card1"><img alt="image"
+              src="https://images.unsplash.com/photo-1541961152178-0077098ff937?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDN8fG1hbG51dHJpdGlvbnxlbnwwfHx8fDE3MTQ1MDEzMjF8MA&amp;ixlib=rb-4.0.3&amp;w=800"
+              class="home-image4" /><span class="home-heading2">Breakfast Feeding</span></div>
+          <div class="home-feature-card2"><img alt="image"
+              src="https://images.unsplash.com/photo-1571869353645-e2c601695fb5?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDR8fG1hbG51dHJpdGlvbnxlbnwwfHx8fDE3MTQ1MDEzMjF8MA&amp;ixlib=rb-4.0.3&amp;w=200"
+              class="home-image5" /><span class="home-heading3">Anganwadi Feeding</span></div>
+        </div>
+      </div>
+
+
+
+      <div id="services" class="home-services">
+        <div class="home-service-card">
+          <div class="home-card-content">
+            <h3 class="home-text08">Education Programs for Underserved Communities</h3>
+            <span class="home-text09"><span>At 13Foundation, we are committed to breaking barriers to education. Our
+                diverse range of education programs is tailored to uplift underserved communities, ensuring every
+                individual has access to quality learning opportunities. From providing scholarships to implementing
+                innovative teaching methods, we strive to make education inclusive and empowering.</span><span
+                class="Card-Text"> </span></span>
+            <input type="checkbox" id="education-toggle1" class="toggle">
+            <label for="education-toggle1" class="home-button button Anchor">READ MORE</label>
+            <div class="modal-box" id="modal1">
+              <div class="modal-content">
+
+                <h2>Education Programs for Underserved Communities&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+                    href="./index.html"> <span class="close">&times;</span></a></h2>
+                <img
+                  src="https://plus.unsplash.com/premium_photo-1682092588009-51eacb1d03ce?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;w=500&amp;h=400"
+                  alt="Education Programs Image">
+                <p class="home-text09">At 13Foundation, we are committed to breaking barriers to education. Our diverse
+                  range of education
+                  programs is tailored to uplift underserved communities, ensuring every individual has access to
+                  quality learning opportunities. From providing scholarships to implementing innovative teaching
+                  methods, we strive to make education inclusive and empowering.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat the structure for other cards with unique IDs -->
+        <!-- For example, for the second card -->
+        <div class="home-service-card">
+          <div class="home-card-content">
+            <h3 class="home-text08">Empowering Tomorrow's Leaders Through Education</h3>
+            <span class="home-text09"><span>Join us in our mission to empower the leaders of tomorrow. Through our
+                education programs, 13Foundation is dedicated to nurturing young minds and fostering a culture of
+                lifelong learning. From early childhood education initiatives to mentorship programs for aspiring
+                professionals, we believe in the transformative power of education to shape a brighter future for
+                all.</span><span class="Card-Text"> </span></span>
+            <input type="checkbox" id="education-toggle2" class="toggle">
+            <label for="education-toggle2" class="home-button button Anchor">READ MORE</label>
+            <div class="modal-box" id="modal2">
+              <div class="modal-content">
+                <h2>Empowering Tomorrow's Leaders Through Education &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+                    href="./index.html"> <span class="close">&times;</span></a></h2>
+                <img
+                  src="https://plus.unsplash.com/premium_photo-1682092618317-9b50d60e6e0d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;w=500&amp;h=400"
+                  alt="Education Programs Image">
+                <p class="home-text09">Join us in our mission to empower the leaders of tomorrow. Through our education
+                  programs,
+                  13Foundation is dedicated to nurturing young minds and fostering a culture of lifelong learning. From
+                  early childhood education initiatives to mentorship programs for aspiring professionals, we believe in
+                  the transformative power of education to shape a brighter future for all.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat the structure for other cards with unique IDs -->
+        <!-- For example, for the third card -->
+        <div class="home-service-card">
+          <div class="home-card-content">
+            <h3 class="home-text08">Educational Equity: Bridging the Opportunity Gap</h3>
+            <span class="home-text09"><span>Bridging the opportunity gap is at the heart of what we do. 13Foundation's
+                education programs are designed to promote educational equity, ensuring that every individual,
+                regardless of background or circumstance, has equal access to educational resources and opportunities.
+                Together, we can build a more just and inclusive society through the power of education.</span><span
+                class="Card-Text"> </span></span>
+            <input type="checkbox" id="education-toggle3" class="toggle">
+            <label for="education-toggle3" class="home-button button Anchor">READ MORE</label>
+            <div class="modal-box" id="modal3">
+              <div class="modal-content">
+                <h2>Educational Equity: Bridging the Opportunity Gap &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+                    href="./index.html"> <span class="close">&times;</span></a></h2>
+                <img
+                  src="https://images.unsplash.com/photo-1675264965927-5d47a4b33162?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;w=500&amp;h=400"
+                  alt="Education Programs Image">
+                <p class="home-text09">Bridging the opportunity gap is at the heart of what we do. 13Foundation's
+                  education programs are
+                  designed to promote educational equity, ensuring that every individual, regardless of background or
+                  circumstance, has equal access to educational resources and opportunities. Together, we can build a
+                  more just and inclusive society through the power of education.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Repeat the structure for other cards with unique IDs -->
+        <!-- For example, for the third card -->
+        <div class="home-service-card">
+          <div class="home-card-content">
+            <h3 class="home-text08">COVID-19 Vaccination Camp: Ensuring Community Health</h3>
+            <span class="home-text09">
+              <span>Ensuring community health is our top priority. Join us at our COVID-19 vaccination camp, where we
+                aim to provide easy access to vaccines for everyone. Our mission is to safeguard public health and
+                combat the spread of the virus, ensuring a safer future for all.</span>
+              <span class="Card-Text"> </span>
+            </span>
+            <input type="checkbox" id="covid-vaccination-toggle" class="toggle">
+            <label for="covid-vaccination-toggle" class="home-button button Anchor">READ MORE</label>
+            <div class="modal-box" id="modal-covid-vaccination">
+              <div class="modal-content">
+                <h2>COVID-19 Vaccination Camp: Ensuring Community Health &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a
+                    href="./index.html"> <span class="close">&times;</span></a></h2>
+                <img
+                  src="https://plus.unsplash.com/premium_photo-1661502783434-ba5b9fba6382?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;w=500&amp;h=400"
+                  alt="COVID-19 Vaccination Camp Image">
+                <p class="home-text09">Ensuring community health is our top priority. Join us at our COVID-19
+                  vaccination camp, where we aim to provide easy access to vaccines for everyone. Our mission is to
+                  safeguard public health and combat the spread of the virus, ensuring a safer future for all.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <!-- Repeat the structure for other cards with unique IDs -->
+        <!-- For example, for the fourth card -->
+        <div class="home-service-card">
+          <div class="home-card-content">
+            <h3 class="home-text08">Innovative Approaches to Education</h3>
+            <span class="home-text09"><span>Explore the cutting-edge world of education with 13Foundation. Our programs
+                leverage innovative approaches to teaching and learning, equipping students with the skills and
+                knowledge they need to thrive in a rapidly changing world. Whether it's through technology-driven
+                curriculum or hands-on experiential learning, we're committed to pushing the boundaries of education to
+                unlock human potential.</span><span class="Card-Text"> </span></span>
+            <input type="checkbox" id="education-toggle4" class="toggle">
+            <label for="education-toggle4" class="home-button button Anchor">READ MORE</label>
+            <div class="modal-box" id="modal4">
+              <div class="modal-content">
+                <h2>Innovative Approaches to Education &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="./index.html">
+                    <span class="close">&times;</span></a></h2>
+                <img
+                  src="https://plus.unsplash.com/premium_photo-1682092588009-51eacb1d03ce?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;w=500&amp;h=400"
+                  alt="Education Programs Image">
+                <p class="home-text09">Explore the cutting-edge world of education with 13Foundation. Our programs
+                  leverage innovative
+                  approaches to teaching and learning, equipping students with the skills and knowledge they need to
+                  thrive in a rapidly changing world. Whether it's through technology-driven curriculum or hands-on
+                  experiential learning, we're committed to pushing the boundaries of education to unlock human
+                  potential.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <div id="about-us" class="home-about-us">
+        <div class="home-heading-container1">
+          <h2 class="home-text22 Section-Heading">What's the story behind our NGO?</h2><span
+            class="home-secondary-text">The founders understood that education was the key to unlocking
+            opportunities and transforming lives. </span><a href="./register.html"><button
+              class="home-cta-btn2 button">VOLUNTEER REGISTERATION</button></a>
+        </div>
+        <div class="home-text-container"><span class="home-text23"><span>The story of 13Foundation begins with a group
+              of individuals
+              who were deeply troubled by the pervasive inequality and lack of
+              opportunities facing marginalized communities in their region.
+              Many of them had personal experiences growing up in underserved
+              areas or witnessing the struggles of friends and family
+              members.</span><br class="Section-Text" /><br class="Section-Text" /><span>Driven by a shared desire to
+              make a difference, they came
+              together with a vision of creating an organization that would
+              empower individuals and communities to break the cycle of
+              poverty and build better futures for themselves. Drawing
+              inspiration from their own journeys and the resilience of those
+              they sought to help, they founded 13Foundation with a commitment
+              to catalyzing positive change.</span></span></div><button class="home-cta-btn4 button Anchor">START
+          BUILDING</button>
+      </div>
+      <div class="home-section-separator1"></div>
+
+      <div id="contact" class="home-contact">
+        <div class="home-content-container">
+          <h2 class="home-text32 Section-Heading">This is where to find us</h2>
+          <div class="home-locations-container">
+            <div class="home-location-1"><span class="home-heading4">Patiala Office</span>
+              <div class="home-adress"><svg viewBox="0 0 1024 1024" class="home-icon40">
+                  <path
+                    d="M512 0c-176.732 0-320 143.268-320 320 0 320 320 704 320 704s320-384 320-704c0-176.732-143.27-320-320-320zM512 512c-106.040 0-192-85.96-192-192s85.96-192 192-192 192 85.96 192 192-85.96 192-192 192z">
+                  </path>
+                </svg><span class="Section-Text">Address</span></div>
+              <div class="home-email"><svg viewBox="0 0 1024 1024" class="home-icon42">
+                  <path
+                    d="M854 342v-86l-342 214-342-214v86l342 212zM854 170q34 0 59 26t25 60v512q0 34-25 60t-59 26h-684q-34 0-59-26t-25-60v-512q0-34 25-60t59-26h684z">
+                  </path>
+                </svg><span class="Section-Text">E-mail Address</span></div>
+              <div class="home-phone"><svg viewBox="0 0 804.5714285714286 1024" class="home-icon44">
+                  <path
+                    d="M804.571 708.571c0 20.571-9.143 60.571-17.714 79.429-12 28-44 46.286-69.714 60.571-33.714 18.286-68 29.143-106.286 29.143-53.143 0-101.143-21.714-149.714-39.429-34.857-12.571-68.571-28-100-47.429-97.143-60-214.286-177.143-274.286-274.286-19.429-31.429-34.857-65.143-47.429-100-17.714-48.571-39.429-96.571-39.429-149.714 0-38.286 10.857-72.571 29.143-106.286 14.286-25.714 32.571-57.714 60.571-69.714 18.857-8.571 58.857-17.714 79.429-17.714 4 0 8 0 12 1.714 12 4 24.571 32 30.286 43.429 18.286 32.571 36 65.714 54.857 97.714 9.143 14.857 26.286 33.143 26.286 50.857 0 34.857-103.429 85.714-103.429 116.571 0 15.429 14.286 35.429 22.286 49.143 57.714 104 129.714 176 233.714 233.714 13.714 8 33.714 22.286 49.143 22.286 30.857 0 81.714-103.429 116.571-103.429 17.714 0 36 17.143 50.857 26.286 32 18.857 65.143 36.571 97.714 54.857 11.429 5.714 39.429 18.286 43.429 30.286 1.714 4 1.714 8 1.714 12z">
+                  </path>
+                </svg><span class="Section-Text">Phone Number</span></div>
+            </div>
+            <div class="home-location-2"><span class="home-heading5">Punjab Office</span>
+              <div class="home-adress1"><svg viewBox="0 0 1024 1024" class="home-icon46">
+                  <path
+                    d="M512 0c-176.732 0-320 143.268-320 320 0 320 320 704 320 704s320-384 320-704c0-176.732-143.27-320-320-320zM512 512c-106.040 0-192-85.96-192-192s85.96-192 192-192 192 85.96 192 192-85.96 192-192 192z">
+                  </path>
+                </svg><span class="Section-Text">Address</span></div>
+              <div class="home-email1"><svg viewBox="0 0 1024 1024" class="home-icon48">
+                  <path
+                    d="M854 342v-86l-342 214-342-214v86l342 212zM854 170q34 0 59 26t25 60v512q0 34-25 60t-59 26h-684q-34 0-59-26t-25-60v-512q0-34 25-60t59-26h684z">
+                  </path>
+                </svg><span class="Section-Text">E-mail Address</span></div>
+              <div class="home-phone1"><svg viewBox="0 0 804.5714285714286 1024" class="home-icon50">
+                  <path
+                    d="M804.571 708.571c0 20.571-9.143 60.571-17.714 79.429-12 28-44 46.286-69.714 60.571-33.714 18.286-68 29.143-106.286 29.143-53.143 0-101.143-21.714-149.714-39.429-34.857-12.571-68.571-28-100-47.429-97.143-60-214.286-177.143-274.286-274.286-19.429-31.429-34.857-65.143-47.429-100-17.714-48.571-39.429-96.571-39.429-149.714 0-38.286 10.857-72.571 29.143-106.286 14.286-25.714 32.571-57.714 60.571-69.714 18.857-8.571 58.857-17.714 79.429-17.714 4 0 8 0 12 1.714 12 4 24.571 32 30.286 43.429 18.286 32.571 36 65.714 54.857 97.714 9.143 14.857 26.286 33.143 26.286 50.857 0 34.857-103.429 85.714-103.429 116.571 0 15.429 14.286 35.429 22.286 49.143 57.714 104 129.714 176 233.714 233.714 13.714 8 33.714 22.286 49.143 22.286 30.857 0 81.714-103.429 116.571-103.429 17.714 0 36 17.143 50.857 26.286 32 18.857 65.143 36.571 97.714 54.857 11.429 5.714 39.429 18.286 43.429 30.286 1.714 4 1.714 8 1.714 12z">
+                  </path>
+                </svg><span class="Section-Text">Phone Number</span></div>
+            </div>
+          </div>
+          <div class="home-social-links-container1"><svg viewBox="0 0 950.8571428571428 1024" class="home-icon52">
+              <path
+                d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z">
+              </path>
+            </svg><svg viewBox="0 0 877.7142857142857 1024" class="home-icon54">
+              <path
+                d="M713.143 73.143c90.857 0 164.571 73.714 164.571 164.571v548.571c0 90.857-73.714 164.571-164.571 164.571h-107.429v-340h113.714l17.143-132.571h-130.857v-84.571c0-38.286 10.286-64 65.714-64l69.714-0.571v-118.286c-12-1.714-53.714-5.143-101.714-5.143-101.143 0-170.857 61.714-170.857 174.857v97.714h-114.286v132.571h114.286v340h-304c-90.857 0-164.571-73.714-164.571-164.571v-548.571c0-90.857 73.714-164.571 164.571-164.571h548.571z">
+              </path>
+            </svg><svg viewBox="0 0 877.7142857142857 1024" class="home-icon56">
+              <path
+                d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z">
+              </path>
+            </svg></div>
+        </div><img alt="image"
+          src="https://images.unsplash.com/photo-1594708767771-a7502209ff51?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDF8fE5HT3xlbnwwfHx8fDE3MTQ1MDA4Nzh8MA&amp;ixlib=rb-4.0.3&amp;w=1500"
+          class="home-image6" />
+      </div>
+    </div>
+  </div>
+  <script defer="" src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+</body>
+
+</html>
